@@ -34,3 +34,9 @@ Route::get('/about', 'PagesController@about');
  * Route Services
  */
 Route::get('/services', 'PagesController@services');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('posts', 'PostsController');

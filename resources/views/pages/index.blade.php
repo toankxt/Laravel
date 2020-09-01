@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-  <h1 class="text-center">{{ $title }}</h1>
-  <p class="text-center">This is page Index</p>
+  <h1 class="">{{ $title }}</h1>
+  <p class="">This is page Index</p>
 @endsection

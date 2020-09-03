@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-inverse shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -40,24 +40,24 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                      <!-- Authentication Links -->
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="/home">Home</a>
+                      </li>
+
+                      {{-- <li class="nav-item">
+                          <a class="nav-link" href="/about">About</a>
+                      </li> --}}
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="/posts">Blog</a>
+                      </li>
+
+                      {{-- <li class="nav-item">
+                          <a class="nav-link" href="/services">Services</a>
+                      </li> --}}
                         <!-- Authentication Links -->
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/posts">Blog</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/services">Services</a>
-                        </li>
-
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -90,11 +90,13 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+          @include('inc/messages')
+          <main class="py-4">
+              @yield('content')
+          </main>
+        </div>
 
-        <main class="py-4 container">
-          @include('inc.messages')
-          @yield('content')
-        </main>
     </div>
 </body>
 </html>
